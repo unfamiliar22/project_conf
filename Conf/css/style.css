@@ -1,0 +1,456 @@
+/* ===== Шрифты ===== */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap');
+
+/* ===== Переменные: белый фон + тёмно-бирюзовый акцент ===== */
+:root {
+    --teal-dark: #0f5b5e;          /* основной тёмно-бирюзовый */
+    --teal-mid: #1a7a7d;           /* средний бирюзовый */
+    --teal-light: #2a9599;         /* светлый бирюзовый */
+    --gray-100: #f4f5f7;
+    --gray-200: #e2e5e9;
+    --gray-400: #9aa1a9;
+    --gray-600: #5b646d;
+    --gray-800: #2d3338;
+    --text-dark: #1f2529;
+    --white: #ffffff;
+}
+
+/* ===== Общие ===== */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, .brand-font {
+    font-family: 'Unbounded', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+main { 
+    flex: 1 0 auto; 
+}
+
+/* ===== Секционные заголовки ===== */
+.section-title {
+    color: var(--teal-dark);
+    font-size: 1.5rem;
+    border-left: 4px solid var(--teal-dark);
+    padding-left: 14px;
+}
+
+/* ===== Хедер ===== */
+.site-header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--teal-dark);
+    box-shadow: 0 4px 18px rgba(15, 91, 94, 0.14), 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+}
+
+.site-header .navbar-brand {
+    color: var(--teal-dark) !important;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.brand-dot { color: var(--teal-mid); }
+
+.site-header .nav-link {
+    color: var(--gray-800) !important;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-header .nav-link:hover {
+    color: var(--teal-dark) !important;
+}
+
+/* Черный текст "Админ-панель" */
+.site-header .admin-panel-label {
+    color: var(--text-dark) !important; 
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* Красная кнопка выхода (каталог) */
+.btn-logout-red {
+    background-color: #c0392b;
+    border: 1px solid #c0392b;
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-logout-red:hover {
+    background-color: #a93226;
+    border-color: #a93226;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* Кнопка регистрации (гость) */
+.btn-register {
+    background-color: var(--teal-dark);
+    border: 1px solid var(--teal-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+.btn-register:hover {
+    background-color: var(--teal-mid);
+    border-color: var(--teal-mid);
+    color: #fff;
+}
+
+/* Кнопка выхода в админ-панели / футере */
+.btn-logout {
+    background-color: transparent;
+    border: 2px solid #c0392b;
+    color: #c0392b;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 6px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+.btn-logout:hover, .btn-logout:focus {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+/* ===== Футер (всегда внизу) ===== */
+.site-footer {
+    background-color: var(--teal-dark);
+    color: #e8f0f1;
+    padding: 18px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Прижимает футер к низу */
+    border-top: 3px solid var(--teal-mid);
+}
+
+.footer-brand {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+}
+.footer-brand .brand-dot { color: #9ee5e8; }
+
+.footer-copy { color: #c6dee0; }
+
+.footer-contacts a {
+    color: #9ee5e8;
+    text-decoration: none;
+}
+.footer-contacts a:hover { text-decoration: underline; }
+
+.footer-admin-label {
+    color: #9ee5e8;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.site-footer .btn-logout.btn-sm {
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    border-width: 1px;
+}
+
+/* ===== Слайдер ===== */
+.slider-wrapper {
+    max-width: 100%;
+    margin: 0 auto 40px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    /* Тень как у форм */
+    box-shadow: 0 18px 46px rgba(15, 91, 94, 0.22), 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(15, 91, 94, 0.85), transparent);
+    color: #fff;
+    padding: 30px 24px 18px;
+}
+
+.slide-caption h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 91, 94, 0.65);
+    border: none;
+    color: #fff;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    z-index: 10;
+}
+.slider-btn:hover { background: var(--teal-dark); }
+.slider-btn.prev { left: 14px; }
+.slider-btn.next { right: 14px; }
+
+/* ===== Карточки залов ===== */
+.tour-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Тень как у форм */
+    box-shadow: 0 18px 46px rgba(15, 91, 94, 0.22), 0 8px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+    background: var(--white);
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(15, 91, 94, 0.28), 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tour-card .card-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1rem;
+    color: var(--teal-dark);
+}
+
+.tour-card .price {
+    color: var(--gray-800);
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+.btn-tour {
+    background-color: var(--teal-dark);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 8px 20px;
+    transition: background 0.2s ease;
+}
+.btn-tour:hover { background-color: var(--teal-mid); color: #fff; }
+
+/* ===== Формы ===== */
+.auth-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px 34px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    /* Эталонная тень */
+    box-shadow: 0 18px 46px rgba(15, 91, 94, 0.22), 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.auth-wrapper h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.4rem;
+    color: var(--teal-dark);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--teal-mid);
+    box-shadow: 0 0 0 0.2rem rgba(26, 122, 125, 0.2);
+}
+
+.btn-auth {
+    background-color: var(--teal-dark);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    transition: background 0.2s ease;
+}
+.btn-auth:hover { background-color: var(--teal-mid); color: #fff; }
+
+.auth-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+.auth-link a {
+    color: var(--teal-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+.auth-link a:hover { text-decoration: underline; }
+
+/* ===== Страницы авторизации: центрирование по вертикали и горизонтали ===== */
+main.auth-page {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    min-height: calc(100vh - 160px);
+}
+
+main.auth-page .auth-wrapper {
+    margin: 0;
+    width: 100%;
+    max-width: 480px;
+}
+
+/* ===== Блок заказа ===== */
+.order-block {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-left: 5px solid var(--teal-dark);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(15, 91, 94, 0.16), 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.order-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(15, 91, 94, 0.24), 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.order-block .order-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.05rem;
+    color: var(--teal-dark);
+    margin-bottom: 12px;
+}
+
+.order-block .order-row {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.order-block .order-row span.label {
+    font-weight: 600;
+    color: var(--gray-600);
+}
+
+.badge-status {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge-new { background-color: #d99a2b; color: #fff; }
+.badge-assigned { background-color: var(--teal-mid); color: #fff; }
+.badge-done { background-color: var(--gray-600); color: #fff; }
+
+/* ===== Админ-таблица ===== */
+.admin-table {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 12px 34px rgba(15, 91, 94, 0.20), 0 6px 14px rgba(0, 0, 0, 0.10);
+}
+
+.admin-table thead {
+    background-color: var(--teal-dark);
+    color: #fff;
+}
+
+.admin-table th, .admin-table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    border-color: var(--gray-200);
+}
+
+.admin-table thead th { color: #fff; }
+
+.admin-table tbody tr:hover { background-color: var(--gray-100); }
+
+.filter-bar {
+    background: var(--gray-100);
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    padding: 18px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(15, 91, 94, 0.16), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Пагинация ===== */
+.pagination .page-link {
+    color: var(--teal-dark);
+    border-color: var(--gray-200);
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--teal-dark);
+    border-color: var(--teal-dark);
+    color: #fff;
+}
+.pagination .page-link:hover {
+    background-color: var(--gray-100);
+    color: var(--teal-dark);
+}
+
+.slide {
+    min-width: 100%;
+    height: 380px;
+    background-size: cover;       /* Заполняет весь блок без искажений */
+    background-position: center;  /* Центрирует картинку */
+    background-repeat: no-repeat; /* Убирает повторение */
+    position: relative;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 500px) {
+    .slide { height: 220px; }
+    .slide-caption h3 { font-size: 1.05rem; }
+    .auth-wrapper { margin: 0; padding: 28px 20px; }
+    .slider-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+    main.auth-page {
+        min-height: calc(100vh - 140px);
+        padding: 24px 16px;
+    }
+}
+
+/* ===== Микроанимации ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.5s ease both; }
